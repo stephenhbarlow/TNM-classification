@@ -15,7 +15,7 @@ def parse_args():
     parser.add_argument('--test_data_dir', type=str, default='data/royal_free_tnm.csv',
                         help='the path to the directory containing the test data.')
     parser.add_argument('--test_data_name', type=str, default="royal_free")
-    parser.add_argument('--model', type=str, default='results/plm_comparison/GatorTron-seed1234.bin')
+    parser.add_argument('--model', type=str, default='results/plm_comparison/GatorTron-seed42.bin')
     parser.add_argument('--tokenizer', type=str, default="UFNLP/gatortron-base",
                         help='the pretrained tokenizer.')
 
@@ -89,7 +89,7 @@ def main():
     ax.set_ylim((0, 1.03))
     ax.set_aspect('equal', adjustable='box')
     plt.legend(loc ='lower right', prop={'size': 8})
-    plt.title("Best GatorTron Multitask Model\n\nReceiver Operating Characteristic - Royal Free Test Set",
+    plt.title("Best GatorTron Multitask Model\n\nReceiver Operating Characteristic - External Test Set",
               fontsize=9)
     plt.savefig(f'visualisations/{args.test_data_name}-auroc_curve.pdf', bbox_inches='tight')
     plt.show()
@@ -128,7 +128,7 @@ def main():
     ax.set_xlim((0, 1))
     ax.set_ylim((0, 1.03))
     ax.set_aspect('equal', adjustable='box')
-    plt.title("Best GatorTron Multitask Model\n\nPrecision-Recall Curve - Royal Free Test Set",
+    plt.title("Best GatorTron Multitask Model\n\nPrecision-Recall Curve - External Test Set",
               fontsize=9)
     plt.savefig(f'visualisations/{args.test_data_name}-precision_recall_curve.pdf', bbox_inches='tight')
     plt.show()
