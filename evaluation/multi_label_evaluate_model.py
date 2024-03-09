@@ -71,10 +71,10 @@ class MultiLabelEvaluateModel(object):
         print(classification_report(eval_dict['y_labels'][:, 2], eval_dict['preds'][:, 2], digits=4))
         print(classification_report(eval_dict['y_labels'][:, 3], eval_dict['preds'][:, 3], digits=4))
 
-        display_confusion_matrix(eval_dict['y_labels'][:, 0], eval_dict['preds'][:, 0], "Royal Free Tumour Confusion Matrix")
-        display_confusion_matrix(eval_dict['y_labels'][:, 1], eval_dict['preds'][:, 1], "Royal Free Node Confusion Matrix")
-        display_confusion_matrix(eval_dict['y_labels'][:, 2], eval_dict['preds'][:, 2], "Royal Free Metastasis Confusion Matrix")
-        display_confusion_matrix(eval_dict['y_labels'][:, 3], eval_dict['preds'][:, 3], "Royal Free Uncertainty Confusion Matrix")
+        display_confusion_matrix(eval_dict['y_labels'][:, 0], eval_dict['preds'][:, 0], "Tumour Confusion Matrix (External Test Set)")
+        display_confusion_matrix(eval_dict['y_labels'][:, 1], eval_dict['preds'][:, 1], "Node Confusion Matrix (External Test Set)")
+        display_confusion_matrix(eval_dict['y_labels'][:, 2], eval_dict['preds'][:, 2], "Metastasis Confusion Matrix (External Test Set)")
+        display_confusion_matrix(eval_dict['y_labels'][:, 3], eval_dict['preds'][:, 3], "Uncertainty Confusion Matrix (External Test Set)")
  
         # display_roc_curve(eval_dict['y_labels'][:, 0], eval_dict['probs'][:, 0])
         # display_roc_curve(eval_dict['y_labels'][:, 1], eval_dict['probs'][:, 1])
