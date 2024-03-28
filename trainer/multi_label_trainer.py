@@ -12,10 +12,6 @@ class MultiLabelTrainer(object):
     def __init__(self, model, optimizer, args, lr_scheduler, train_dataloader, val_dataloader):
 
         self.args = args
-        logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
-                            datefmt='%m/%d/%Y %H:%M:%S', level=logging.INFO)
-        self.logger = logging.getLogger(__name__)
-
         # setup GPU device if available, move model onto configured device
         if self.args.device == "mps":
             self.device = "mps" if torch.backends.mps.is_available() else "cpu"
